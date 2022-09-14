@@ -1,10 +1,8 @@
 package com.ll.exam;
-
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 public class Rq {
@@ -21,8 +19,20 @@ public class Rq {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=utf-8");
     }
+
+    public String getParam(String paramName, String defaultValue) {
+        String value = req.getParameter(paramName);
+
+        if (value == null || value.trim().length() == 0) {
+            return defaultValue;
+        }
+
+        return value;
+    }
+
     public int getIntParam(String paramName, int defaultValue) {
         String value = req.getParameter(paramName);
+
         if (value == null) {
             return defaultValue;
         }
@@ -39,11 +49,9 @@ public class Rq {
             throw new RuntimeException(e);
         }
     }
-
     public void setAttr(String name, Object value) {
         req.setAttribute(name, value);
     }
-
     public void view(String path) {
         // gugudan2.jsp 에게 나머지 작업을 토스
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/jsp/" + path + ".jsp");
@@ -54,5 +62,13 @@ public class Rq {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public String getPath() {
+        return req.getRequestURI();
+    }
+
+    public String getMethod() {
+        return req.getMethod();
     }
 }
