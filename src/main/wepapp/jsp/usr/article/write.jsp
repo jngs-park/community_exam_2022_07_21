@@ -2,7 +2,7 @@
 
 
 <h1>문의사항 작성</h1>
-
+<script>
 function ArticleSave__submitForm(form) {
     form.title.value = form.title.value.trim();
     if ( form.title.value.length == 0 ) {
@@ -38,7 +38,7 @@ function ArticleSave__submitForm(form) {
     <div>
                 <span>작성</span>
                 <div>
-                    <input name="submit" type="작성" />
+                    <input type="submit" value="작성" />
                 </div>
     </div>
 
