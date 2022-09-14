@@ -5,7 +5,7 @@
 ArticleDto article = (ArticleDto)request.getAttribute("article");
 %>
 
-<h1>게시물 상세페이지</h1>
+<h1>고객센터 문의사항 상세페이지</h1>
 
 <div>
     <% if ( article != null ) { %>

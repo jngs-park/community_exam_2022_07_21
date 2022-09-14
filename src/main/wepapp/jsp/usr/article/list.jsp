@@ -4,7 +4,7 @@
 <%
 List<ArticleDto> articles = (List<ArticleDto>)request.getAttribute("articles");
 %>
-<h1>게시물 리스트</h1>
+<h1>고객센터 문의사항 리스트</h1>
 
 <ul>
     <% for ( ArticleDto article : articles ) { %>
