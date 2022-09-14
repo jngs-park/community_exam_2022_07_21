@@ -1,14 +1,14 @@
-
 package com.ll.exam.article;
 
 import com.ll.exam.Rq;
-import com.ll.exam.article.Dto.ArticleDto;
+import com.ll.exam.article.dto.ArticleDto;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleController {
     public void showList(Rq rq) {
+
         List<ArticleDto> articleDtos = new ArrayList<>();
         articleDtos.add(new ArticleDto(5, "제목 5", "내용 5"));
         articleDtos.add(new ArticleDto(4, "제목 4", "내용 4"));

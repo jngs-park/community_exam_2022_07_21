@@ -1,4 +1,4 @@
-package com.ll.exam.article.Dto;
+package com.ll.exam.article.dto;
 
 public class ArticleDto {
     private long id;
@@ -31,6 +31,7 @@ public class ArticleDto {
     public String getTitle() {
         return title;
     }
+
 
     public void setTitle(String title) {
         this.title = title;
