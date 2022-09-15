@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
-<h1>문의사항 작성</h1>
+<h1>고객센터 문의사항 작성</h1>
 <script>
 function ArticleSave__submitForm(form) {
     form.title.value = form.title.value.trim();
