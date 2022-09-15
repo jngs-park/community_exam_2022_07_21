@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
-<h1>고객센터 문의사항 작성</h1>
+<%@ include file="../common/head.jspf"%>
 <script>
 function ArticleSave__submitForm(form) {
     form.title.value = form.title.value.trim();
@@ -20,26 +20,33 @@ function ArticleSave__submitForm(form) {
 }
 </script>
 
-<form method="POST" onsubmit="ArticleSave__submitForm(this); return false;">
-    <div>
-        <span>제목</span>
-        <div>
-            <input name="title" type="text" maxlength="50" placeholder="제목을 입력하세요" />
-        </div>
-    </div>
-
-    <div>
-            <span>내용</span>
+<section>
+    <!-- container(max-width) : 너비가 너무 넓게 퍼지는 것을 막는다 + 반응형은 잃지 않는다. -->
+    <!-- mx-auto : margin-left:auto; margin-right:auto; -->
+    <div class="container px-3 mx-auto">
+        <h1 class="font-bold text-lg">고객센터 문의사항 작성</h1>
+        <form method="POST" onsubmit="ArticleSave__submitForm(this); return false;">
             <div>
-                <input name="body" type="text" maxlength="300" placeholder="내용을 입력하세요" />
-            </div>
-    </div>
-
-    <div>
-                <span>작성</span>
+                <span>제목</span>
                 <div>
-                    <input type="submit" value="작성" />
+                    <input name="title" type="text" maxlength="50" placeholder="제목을 입력해주세요." />
                 </div>
-    </div>
+            </div>
 
-</form>
+            <div>
+                <span>내용</span>
+                <div>
+                    <input name="body" type="text" maxlength="300" placeholder="내용을 입력해주세요." />
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <input class="hover:underline hover:text-[red] cursor-pointer" type="submit" value="작성" />
+                </div>
+            </div>
+        </form>
+    </div>
+    </section>
+
+<%@ include file="../common/foot.jspf"%>
