@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.ll.exam.article.dto.ArticleDto" %>
 
-<%
-ArticleDto article = (ArticleDto)request.getAttribute("article");
-%>
 
 <%@ include file="../common/head.jspf"%>
 
@@ -13,17 +9,15 @@ ArticleDto article = (ArticleDto)request.getAttribute("article");
 
 
         <div>
-            <% if ( article != null ) { %>
-                            <div>
-                                ID : <%=article.getId()%>
-                            </div>
-                            <div>
-                                TITLE : <%=article.getTitle()%>
-                            </div>
-                            <div>
-                                BODY : <%=article.getBody()%>
-                            </div>
-                        <% } %>
+             <div>
+                            ID : ${article.id}
+                        </div>
+                        <div>
+                            TITLE : ${article.title}
+                        </div>
+                        <div>
+                            BODY : ${article.body}
+                        </div>
         </div>
  </div>
  </section>
