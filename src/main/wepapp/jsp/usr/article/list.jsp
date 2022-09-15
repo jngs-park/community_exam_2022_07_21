@@ -19,8 +19,7 @@ List<ArticleDto> articles = (List<ArticleDto>)request.getAttribute("articles");
                 <a class="w-[40px] hover:underline hover:text-[red]" href="/usr/article/detail/free/<%=article.getId()%>"><%=article.getId()%></a>
 
                 <a class="flex-grow hover:underline hover:text-[red]" href="/usr/article/detail/free/<%=article.getId()%>"><%=article.getTitle()%></a>
-                <a onclick="if ( confirm('정말로 삭제하시겠습니까?') ) $(this).next().get(0).submit();" class="hover:underline hover:text-[red] mr-2">삭제</a>
-                                <form hidden method="POST" action="/usr/article/delete/free/${article.id}"></form>
+                <a onclick="if ( !confirm('정말로 삭제하시겠습니까?') ) return false;" class="hover:underline hover:text-[red] mr-2" href="/usr/article/delete/free/${article.id}?_method=DELETE">삭제</a>
                 <a class="hover:underline hover:text-[red]" href="/usr/article/modify/free/<%=article.getId()%>">수정</a>
             </li>
             <% } %>
